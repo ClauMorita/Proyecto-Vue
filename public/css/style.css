@@ -1,0 +1,52 @@
+#app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #1764b0;
+    margin-top: 60px;
+  }
+  
+  .nav-texto {
+    font-size: 15px;
+    justify-content: center;
+    text-align: center;
+    /* border-left: 1px solid white; */
+  }
+  
+  .categorias {
+    border-top: solid 1px black;
+    border-bottom: solid 1px black;
+    font-size: 12px;
+  }
+  
+  .carousel {
+    height: 400px;
+    margin-top: 10px;
+    padding-top: 10px;
+    width: 100%;
+  }
+  
+  .carousel img {
+    height: 350px;
+    width: 300px;
+  }
+  
+  .carousel-indicators .active {
+    background-color: black;
+    width: 60px;
+    height: 6px;
+  }
+  
+  .cards {
+    margin-top: 30px;
+    padding-top: 10px;
+    height: 300px;
+    background-color: red;
+  
+  }
+  
+  .cards img {
+    height: 200px;
+    width: 200px
+  }
