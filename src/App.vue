@@ -84,26 +84,27 @@
         </b-container>
       </div>
     </div>
-
-    <div class="content">
-      <p>Productos: {{ productos }}</p>
+    <div>
+      <ListadoProductos/>
     </div>
   </div>
 </template>
 
 <script>
-import axios from "axios";
+import ListadoProductos from './components/ListadoProductos.vue';
 
 export default {
   name: 'App',
-  mounted: function () {
-    axios
-      .get('https://fakestoreapi.com/products')
-      .then(productos => {
-        console.log(productos)
-        // this.result = result.data;
-      })
-  }
+  components:{
+    ListadoProductos
+  },
+  // mounted: function () {
+  //   axios
+  //     .get('https://fakestoreapi.com/products')
+  //     .then(productos => {
+  //       console.log(productos)
+  //     })
+  // }
 }
 </script>
 
@@ -161,4 +162,5 @@ export default {
 .cards img {
   height: 200px;
   width: 200px
-}</style>
+}
+</style>
