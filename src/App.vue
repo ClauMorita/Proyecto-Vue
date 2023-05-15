@@ -17,51 +17,52 @@
       </b-nav>
     </div>
 
-    <div class="container mx-auto">      
+    <div class="container mx-auto">
       <div class="nav-logo">
-      <b-row>
-        <b-navbar type="row m-0 p-0 w-100">
-          <b-col>
-            <a class="navbar-brand p-5"><img alt="Vue logo" src="./assets/logo.png"></a>
-          </b-col>
-          <b-col>
-            <b-nav-form>
-              <b-form-input class="" placeholder="Buscar por palabra clave/título/autor/ISBN"></b-form-input>
-              <b-button variant="dark-light" class="my-2 my-sm-0" type="submit"><i
-                  class="fas fa-search fa-lg"></i></b-button>
-            </b-nav-form>
-          </b-col>
-          <b-col >
-            <i class="fas fa-map-marker-alt fa-lg p-3"></i>
-            <i class="fas fa-user fa-lg p-3"></i>
-            <i class="fas fa-shopping-cart fa-lg p-3"></i>
-          </b-col>
-        </b-navbar>
-      </b-row>
+        <b-row>
+          <b-navbar type="row m-0 p-0 w-100">
+            <b-col>
+              <a class="navbar-brand p-5"><img alt="Vue logo" src="./assets/logo.png"></a>
+            </b-col>
+            <b-col>
+              <b-nav-form>
+                <b-form-input class="" placeholder="Buscar por palabra clave/título/autor/ISBN"></b-form-input>
+                <b-button variant="dark-light" class="my-2 my-sm-0" type="submit"><i
+                    class="fas fa-search fa-lg"></i></b-button>
+              </b-nav-form>
+            </b-col>
+            <b-col>
+              <i class="fas fa-map-marker-alt fa-lg p-3"></i>
+              <i class="fas fa-user fa-lg p-3"></i>
+              <i class="fas fa-shopping-cart fa-lg p-3"></i>
+            </b-col>
+          </b-navbar>
+        </b-row>
       </div>
 
       <div class="categorias">
-      <ul class="nav justify-content-center">
-        <li class="nav-item">
-          <a class="nav-link text-dark font-weight-bold" href="#">CATEGORÍAS <i class="fa fa-angle-down cbp-submenu-aindicator"></i></a>
-        
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-dark" href="#">NOVEDADES</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-dark" href="#">MÁS VENDIDOS <i class="fa fa-angle-down cbp-submenu-aindicator"></i></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-dark font-weight-bold" href="#">EDITORIAL CONTRAPUNTO</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-dark font-weight-bold" href="#">MOLESKINE</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-dark font-weight-bold" href="#">LOQI</a>
-        </li>
-      </ul>
+        <ul class="nav justify-content-center">
+          <li class="nav-item">
+            <a class="nav-link text-dark font-weight-bold" href="#">CATEGORÍAS <i
+                class="fa fa-angle-down cbp-submenu-aindicator"></i></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-dark" href="#">NOVEDADES</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-dark" href="#">MÁS VENDIDOS <i
+                class="fa fa-angle-down cbp-submenu-aindicator"></i></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-dark font-weight-bold" href="#">EDITORIAL CONTRAPUNTO</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-dark font-weight-bold" href="#">MOLESKINE</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-dark font-weight-bold" href="#">LOQI</a>
+          </li>
+        </ul>
       </div>
 
       <div class="carousel">
@@ -73,7 +74,7 @@
       </div>
 
       <div class="cards">
-        <b-container class="bv-example-row">
+        <b-container class="bv-example-row w-100">
           <b-row>
             <b-col><img src="./assets/top.png" alt=""></b-col>
             <b-col><img src="./assets/top_infantil.png" alt=""></b-col>
@@ -83,31 +84,30 @@
         </b-container>
       </div>
     </div>
+
+    <div class="content">
+      <p>Productos: {{ productos }}</p>
+    </div>
   </div>
 </template>
 
 <script>
-import axios from "axios"
+import axios from "axios";
 
 export default {
   name: 'App',
   mounted: function () {
-    axios.get('https://fakestoreapi.com/products').then(productos => {
-      console.log(productos)
-    })
+    axios
+      .get('https://fakestoreapi.com/products')
+      .then(productos => {
+        console.log(productos)
+        // this.result = result.data;
+      })
   }
-
 }
 </script>
 
 <style>
-/* @media only screen and (max-width: 800px) {
-  
-  .nav-custom {
-    display: block;
-    background-color: lightblue;}
-} */
-
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -124,7 +124,7 @@ export default {
   /* border-left: 1px solid white; */
 }
 
-.categorias{  
+.categorias {
   border-top: solid 1px black;
   border-bottom: solid 1px black;
   font-size: 12px;
@@ -141,20 +141,24 @@ export default {
   height: 350px;
   width: 300px;
 }
+
 .carousel-indicators .active {
-    background-color: black;  
-    width: 60px;
-    height: 6px; 
+  background-color: black;
+  width: 60px;
+  height: 6px;
 }
+
 .cards {
   margin-top: 30px;
-  padding-top: 10px;
+  padding-top: 30px;
   height: 300px;
-  background-color: red;
-  
+  border-top: solid 1px black;
+  border-bottom: solid 1px black;
+  justify-content: center;
+  justify-content: space-between
 }
+
 .cards img {
   height: 200px;
   width: 200px
-}
-</style>
+}</style>
