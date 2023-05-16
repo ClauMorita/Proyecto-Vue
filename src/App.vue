@@ -66,7 +66,7 @@
       </div>
 
       <div class="carousel">
-        <b-carousel id="carousel-fade" style="text-shadow: 0px 0px 2px #000" no-animation fade indicators>
+        <b-carousel id="carousel-fade" style="text-shadow: 0px 0px 2px #000;" no-animation fade indicators>
           <b-carousel-slide caption="Ver todo" img-src="https://picsum.photos/1024/480/?image=10"></b-carousel-slide>
           <b-carousel-slide caption="Ver todo" img-src="https://picsum.photos/1024/480/?image=12"></b-carousel-slide>
           <b-carousel-slide caption="Comprar" img-src="https://picsum.photos/1024/480/?image=22"></b-carousel-slide>
@@ -82,10 +82,10 @@
             <b-col><img src="./assets/top_best.png" alt=""></b-col>
           </b-row>
         </b-container>
-      </div>
+      </div>      
+      <listado-productos/>
     </div>
     <div>
-      <ListadoProductos/>
     </div>
   </div>
 </template>
@@ -96,71 +96,18 @@ import ListadoProductos from './components/ListadoProductos.vue';
 export default {
   name: 'App',
   components:{
-    ListadoProductos
+    'listado-productos':ListadoProductos
   },
   // mounted: function () {
-  //   axios
-  //     .get('https://fakestoreapi.com/products')
-  //     .then(productos => {
-  //       console.log(productos)
-  //     })
+    // axios
+    //   .get('https://fakestoreapi.com/products')
+    //   .then(productos => {
+    //     console.log(productos)
+    //   })
   // }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #1764b0;
-  margin-top: 60px;
-}
 
-.nav-texto {
-  font-size: 15px;
-  justify-content: center;
-  text-align: center;
-  /* border-left: 1px solid white; */
-}
-
-.categorias {
-  border-top: solid 1px black;
-  border-bottom: solid 1px black;
-  font-size: 12px;
-}
-
-.carousel {
-  height: 400px;
-  margin-top: 10px;
-  padding-top: 10px;
-  width: 100%;
-}
-
-.carousel img {
-  height: 350px;
-  width: 300px;
-}
-
-.carousel-indicators .active {
-  background-color: black;
-  width: 60px;
-  height: 6px;
-}
-
-.cards {
-  margin-top: 30px;
-  padding-top: 30px;
-  height: 300px;
-  border-top: solid 1px black;
-  border-bottom: solid 1px black;
-  justify-content: center;
-  justify-content: space-between
-}
-
-.cards img {
-  height: 200px;
-  width: 200px
-}
 </style>
